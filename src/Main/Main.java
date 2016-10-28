@@ -1,19 +1,27 @@
-public class Main {
-    public static void main(String args[]) {
-        System.out.println("NBA Fantasy - head match-up'i!");
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 
-        int mina = 30;
-        int vastane = 32;
+public class Main extends Application {
 
-        mina = mina - vastane;
+    @Override
+    public void start(Stage primaryStage) throws Exception {
 
-        if (mina > 0) {
-            System.out.println("võit!");
-        }  else {
-            System.out.println("kaotus!");
-        }
+        VBox vbox = new VBox();
+        Scene login = new Scene(vbox, 400, 200);
+        primaryStage.setScene(login);
+        primaryStage.show();
+
+        Label pealkiri = new Label("Kes võidab mängu?");
+        TextField paroolField = new TextField();
+
+        vbox.getChildren().addAll(pealkiri, paroolField);
     }
-
-
 
 }
