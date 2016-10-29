@@ -10,9 +10,11 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+       Printing.printalgus();
         VBox vbox = new VBox();
         Scene login = new Scene(vbox, 400, 200);
         primaryStage.setScene(login);
