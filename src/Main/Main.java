@@ -8,6 +8,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 public class Main extends Application {
 
 
@@ -15,6 +17,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
        Printing.printalgus();
+        ArrayList playerList1 = ReadStats.readStats("C:\\Users\\jrihma\\Documents\\Kool\\Java\\code\\javafantasykoss\\src\\Main\\mina.csv");
+        ArrayList playerList2 = ReadStats.readStats("C:\\Users\\jrihma\\Documents\\Kool\\Java\\code\\javafantasykoss\\src\\Main\\vastane.csv");
         VBox vbox = new VBox();
         Scene login = new Scene(vbox, 400, 200);
         primaryStage.setScene(login);
