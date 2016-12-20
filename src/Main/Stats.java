@@ -6,9 +6,11 @@ public class Stats {
     int gamesPlayed;
     double fieldGoalAttempts;
     double fieldGoalPercentage;
+    double fieldGoalMade;
 
     double freeThrowAttempts;
     double freeThrowPercentage;
+    double freeThrowMade;
 
     double threePM;
     double reb;
