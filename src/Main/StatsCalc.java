@@ -5,7 +5,7 @@ import java.util.ArrayList;
  */
 public class StatsCalc {
 
-    public static void statsCalc (ArrayList<Stats> playerList) {
+    public static Stats statsCalc (ArrayList<Stats> playerList) {
 
         Stats total = new Stats();
 
@@ -31,6 +31,8 @@ public class StatsCalc {
 
         total.fieldGoalPercentage = total.fieldGoalMade/total.fieldGoalAttempts;
         total.freeThrowPercentage = total.freeThrowMade/total.freeThrowAttempts;
+
+        return total;
 
 
     }

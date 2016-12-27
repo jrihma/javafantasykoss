@@ -9,7 +9,7 @@ public class ReadStats {
     public static ArrayList readStats (String failiAsukoht) {
         System.out.println("NBA Fantasy - head match-up'i!");
 
-        File f = new File("");
+        File f = new File(failiAsukoht);
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader(f));
@@ -18,7 +18,10 @@ public class ReadStats {
         }
         String line = null;
         try {
-            line = br.readLine();
+
+            if (br != null) {
+                line = br.readLine();
+            }
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -96,4 +99,6 @@ public class ReadStats {
 
         return stats;
     }
+
+
 }
