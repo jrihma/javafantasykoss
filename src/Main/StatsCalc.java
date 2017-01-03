@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -8,6 +9,8 @@ public class StatsCalc {
     public static Stats statsCalc (ArrayList<Stats> playerList) {
 
         Stats total = new Stats();
+
+
 
 
         for (Stats stats: playerList) {
@@ -26,11 +29,23 @@ public class StatsCalc {
 
             //total fieldGoalPercentage is total.fieldGoalMade/total.fieldGoalAttempts
             //total freeThrowPercentage is total.freeThrowMade/total.freeThrowAttemtps
-            System.out.println(stats);
+            //System.out.println(stats);
         }
+
+        total.threePM = Math.round(total.threePM*100.0)/100.0;
+        total.reb = Math.round(total.reb*100.0)/100.0;
+        total.ast = Math.round(total.ast*100.0)/100.0;
+        total.stl = Math.round(total.stl*100.0)/100.0;
+        total.blk = Math.round(total.blk*100.0)/100.0;
+        total.pts = Math.round(total.pts*100.0)/100.0;
 
         total.fieldGoalPercentage = total.fieldGoalMade/total.fieldGoalAttempts;
         total.freeThrowPercentage = total.freeThrowMade/total.freeThrowAttempts;
+
+        total.fieldGoalPercentage = Math.round(total.fieldGoalPercentage*1000.0)/1000.0;
+        total.freeThrowPercentage = Math.round(total.freeThrowPercentage*1000.0)/1000.0;
+
+
 
         return total;
 
