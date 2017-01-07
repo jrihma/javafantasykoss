@@ -1,7 +1,9 @@
 ﻿Joonas Rihma, 2016-2017
+
 i200 Projekt - ESPN NBA fantasy korvpalli statistika analüüs ja tulemuste kajastamine 
 
 KIRJELDUS
+
 Tegemist on programmiga, mis arvutab kokku sinu ja vastase meeskonna prognoositava tulemuse eelnevalt NBA mängijate poolt sooritatud statistika põhjal. Tulemused kajastuvad kasutajaliideses. 
 
 See programm võimaldab suurema vaevata hinnata, milliseid oma meeskonna mängijaid parasjagu oma vastase vastu mängima võiks panna selliselt, et sul oleks statistiline eelis. 
@@ -18,9 +20,12 @@ Kuidas programm täpsemalt töötab:
 
 
 KASUTUSJUHEND
+
 Uuenda oma meeskonna ja vastase meeskonna andmeid vastavates failides. „myTeam“ ja „opponentsTeam“. Failid on kohandatud ESPN NBA Fantasy jaoks ning uued andmed saab aadressilt http://www.espn.com/fantasy/basketball/
 Käivita programm ning vaata tulemusi. Kui tulemusega ei ole rahul, siis jälgi, millised kategooriad on tugevad ning millised on nõrgad ning vaheta mõni oma mängija välja. Selleks uuenda andmeid ning käitita programm uuesti. 
+
 LITSENTS
+
 http://choosealicense.com/licenses/unlicense/
 KASUTATUD MATERJALID
 Statistika andmed on võetud leheküljelt http://www.espn.com/fantasy/basketball/

@@ -41,7 +41,7 @@ public class ReadStats {
                 line = br.readLine();
                 if (line != null) {
 
-                    Stats player = lineToArray(line);  // Kutsun välja meetodi, mis muudab tekstirea massiiviks, mis sisaldab ühe mängija statistikat
+                    Stats player = lineToArray(line);  // Kutsun välja meetodi, mis muudab tekstirea objektiks, mis sisaldab ühe mängija statistikat
                     playerList.add(player); // Lisan iga mängija statistika Arraylist'i while tsüklis
                 }
 
