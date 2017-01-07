@@ -1,5 +1,7 @@
 /**
  * Created by jrihma on 20-Dec-16.
+ * <p>
+ * Siin klassis defineerin kõik vajalikud muutujad statistika arvutamiseks
  */
 public class Stats {
 
