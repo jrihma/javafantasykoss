@@ -27,5 +27,6 @@ Käivita programm ning vaata tulemusi. Kui tulemusega ei ole rahul, siis jälgi,
 LITSENTS
 
 http://choosealicense.com/licenses/unlicense/
+
 KASUTATUD MATERJALID
 Statistika andmed on võetud leheküljelt http://www.espn.com/fantasy/basketball/
