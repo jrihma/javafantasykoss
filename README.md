@@ -29,4 +29,5 @@ LITSENTS
 http://choosealicense.com/licenses/unlicense/
 
 KASUTATUD MATERJALID
+
 Statistika andmed on võetud leheküljelt http://www.espn.com/fantasy/basketball/
