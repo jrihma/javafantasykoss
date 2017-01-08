@@ -13,7 +13,7 @@ public class ReadStats {
     public static ArrayList readStats(String fileLocation) {
         System.out.println("NBA Fantasy - have a good match-up, boss!");
 
-                // Kasutan i200 materjalidest võetud "Faili lugemine" koodi
+        // Kasutan i200 materjalidest võetud "Faili lugemine" koodi
         File f = new File(fileLocation); // Näitan faili asukoha
         BufferedReader br = null;
         try {
@@ -25,14 +25,14 @@ public class ReadStats {
         try {
 
             if (br != null) {
-                line = br.readLine(); // Kui failis on mingi tekst reaga, siis loe see rida
-            }
+                line = br.readLine(); // Kasutan seda väljaspool while tsüklit ning sellega jätan esimese rea ArrayListist välja. Esimene rida ei sisalda statistikat, vaid hoopis väljade nimesid.
+            }                         // SLOT,"PLAYER, TEAM POS",ACTION,,GAMES: OPPONENTS,,GP,MIN,FGM/FGA,FG%,FTM/FTA,FT%,3PM,REB,AST,STL,BLK,PTS,,PR15,%OWN,+/-
 
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        ArrayList playerList = new ArrayList(); // Loon uue Arraylist'i playerList
+        ArrayList playerList = new ArrayList(); // Loon uue Arraylist'i playerList ning lisan alates teisest reast kõik tulemused arraylisti.
 
         while (line != null) {
             System.out.println(line); // nii kaua kuni on ridu, mida lugeda, siis prindime read välja
@@ -65,15 +65,15 @@ public class ReadStats {
 
         //PG,"Eric Bledsoe, Pho�PG",,,"3:�@Min,�Hou,�Phi",,14,33.1,7.7/17.8,0.434,5.3/6.1,0.86,1.9,5.1,5.6,2.1,0.8,22.6,,10.76,98.8,0
 
-        int kolmKoma = line.indexOf(",,,");
+        int threeCommas = line.indexOf(",,,");
 
         // Otsin reast koha, kus on kolm koma järjest (see juhtub ainult ühes kohas). Miks on oluline võtta kole koma asukoht,
         // on seetõttu, et alati mängude arv on peale kolme koma ning jutumärki. Mängijate nimed on erineva pikkusega ning samuti on mõnel mängijal lisa positsioonid ning seetõttu otsene asukoht ei töötaks.
 
-        String gamesPlayed = line.substring(kolmKoma + 4, kolmKoma + 5); // Mängude arvu number on 4 kohta pärast komade algust. Samuti annan lõpu asukoha, et programm ei haaraks seda, mis tuleb peale mängude arvu.
-        line = line.substring(kolmKoma + 5); // Defineerin rea uuesti sedasi, et rida hakkaks peale kolme koma. See on tähtis, kuna järgmiseks on oluline kahe koma asukoht ning kolma koma sisaldab samtui kahe koma.
-        int kaksKoma = line.indexOf(",,"); // Defineerin kahe koma asukoha
-        line = line.substring(kaksKoma + 2); // Alustan reaga nüüd peale kahte koma, kus jõuan järgmiste oluliste numbriteni, mis on kõik ühtemoodi komadega eraldatud.
+        String gamesPlayed = line.substring(threeCommas + 4, threeCommas + 5); // Mängude arvu number on 4 kohta pärast komade algust. Samuti annan lõpu asukoha, et programm ei haaraks seda, mis tuleb peale mängude arvu.
+        line = line.substring(threeCommas + 5); // Defineerin rea uuesti sedasi, et rida hakkaks peale kolme koma. See on tähtis, kuna järgmiseks on oluline kahe koma asukoht ning kolma koma sisaldab samtui kahe koma.
+        int twoCommas = line.indexOf(",,"); // Defineerin kahe koma asukoha
+        line = line.substring(twoCommas + 2); // Alustan reaga nüüd peale kahte koma, kus jõuan järgmiste oluliste numbriteni, mis on kõik ühtemoodi komadega eraldatud.
         String[] split = line.split(","); // Loon String tüüpi massiivi, kus rida on jaotatud eraldi sõnedeks. Kasutan split käsklust.
 
 
@@ -92,12 +92,12 @@ public class ReadStats {
 
 
         // Kuna fieldCoalMade ja fieldCoalAttempted ning freeThrowMade ja freeThrowAttempted on ühe sõne all kujul 8.5/19.9, siis tuleb eelnevalt anda nende õige asukoht. Meil on viskeprotsent teada ja seetõttu on meile oluline Attemps mitte Made.
-        int kaldkriips1 = split[2].indexOf("/"); // Defineerin kaldkriipsu asukoha, mis asub positisioonil split[2]
-        String fieldGoal = split[2].substring(kaldkriips1 + 1); // Leian asukoha, mis on split listis teisel kohal, ning arvu, mis on tuleb peale kaldkriipsu
+        int slashSymbol1 = split[2].indexOf("/"); // Defineerin kaldkriipsu asukoha, mis asub positisioonil split[2]
+        String fieldGoal = split[2].substring(slashSymbol1 + 1); // Leian asukoha, mis on split listis teisel kohal, ning arvu, mis on tuleb peale kaldkriipsu
         stats.fieldGoalAttempts = Double.parseDouble(fieldGoal); // Defineerin fieldCoalAttempts
 
-        int kaldkriips2 = split[4].indexOf("/"); // Sarnaselt freeThrowAttempts
-        String freeThrow = split[4].substring(kaldkriips2 + 1);
+        int slashSymbol2 = split[4].indexOf("/"); // Sarnaselt freeThrowAttempts
+        String freeThrow = split[4].substring(slashSymbol2 + 1);
         stats.freeThrowAttempts = Double.parseDouble(freeThrow);
 
         return stats; // tagastan muutujate väärtused

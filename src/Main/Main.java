@@ -32,8 +32,8 @@ public class Main extends Application {
         primaryStage.setScene(showResults); // Ekraani tüüp
         primaryStage.show(); // Näita ekraani
 
-        Label pealkiri = new Label("Total Stats & Game Result");
-        pealkiri.setFont(Font.font("Verdana", 20));
+        Label title = new Label("Total Stats & Game Result");
+        title.setFont(Font.font("Verdana", 20));
 
         GridPane grid = new GridPane(); // Loon ruudustiku
         grid.setTranslateX(100);
@@ -263,7 +263,7 @@ public class Main extends Application {
         gameResult.setTranslateY(75);
         gameResult.setFont(Font.font("Verdana", 30));
 
-        vbox.getChildren().addAll(pealkiri, grid, finalScore, gameResult); // Teen kõik defineeritud kasutajaliideses nähtavaks.
+        vbox.getChildren().addAll(title, grid, finalScore, gameResult); // Teen kõik defineeritud kasutajaliideses nähtavaks.
 
     }
 
